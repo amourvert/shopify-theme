@@ -1,0 +1,26 @@
+{% unless current_collection == blank %}
+  {% assign current_collection = collection %}
+{% endunless %}
+
+<div class="collect-color" id="prod-{{ product.id }}" data-alpha="{{ product.title }}" data-price="{{ product.price }}">
+  <div class="ci">
+    
+      
+  {% if product.available and product.variants.size > 1 %}
+       {% include 'collection-swatch' with 'Color' %}
+      {% endif %}
+    
+   
+  </div>
+
+ {% comment %}
+  <div class="product-info"> 
+    {% if settings.quickview %}
+  <a class="fancybox.ajax product-modal" href="{{ product.url }}?view=quick">{{ 'products.general.quick_view' | t }}</a>
+    {% endif %}
+  </div> 
+{% endcomment %}
+
+
+</div>
+
