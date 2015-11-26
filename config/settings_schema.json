@@ -789,7 +789,7 @@
         "id": "banner_font",
         "label": "Banner Font",
         "options": [
-		 {
+          {
             "value": "'futura', Helvetica, Arial, sans-serif",
             "label": "Futura",
             "group": "Sans-serif"
@@ -1197,12 +1197,12 @@
         "id": "font",
         "label": "Main Font",
         "options": [
-		 {
+          {
             "value": "'futura', Helvetica, Arial, sans-serif",
             "label": "Futura",
             "group": "Sans-serif"
           },
-		 {
+          {
             "value": "'adobe caslon pro'",
             "label": "Adobe Caslon Pro",
             "group": "Serif"
@@ -1360,12 +1360,12 @@
         "id": "headings_font",
         "label": "Headings Font",
         "options": [
-		 {
+          {
             "value": "'futura', Helvetica, Arial, sans-serif",
             "label": "Futura",
             "group": "Sans-serif"
           },
-		 {
+          {
             "value": "'adobe caslon pro'",
             "label": "Adobe Caslon Pro",
             "group": "Serif"
@@ -1962,12 +1962,12 @@
         "id": "navigation-font",
         "label": "Navigation Font",
         "options": [
-		 {
+          {
             "value": "'futura', Helvetica, Arial, sans-serif",
             "label": "Futura",
             "group": "Sans-serif"
           },
-		 {
+          {
             "value": "'adobe caslon pro'",
             "label": "Adobe Caslon Pro",
             "group": "Serif"
@@ -2266,12 +2266,12 @@
         "id": "icon-font",
         "label": "New, Sale & Sold Out Icon Font",
         "options": [
-		 {
+          {
             "value": "'futura', Helvetica, Arial, sans-serif",
             "label": "Futura",
             "group": "Sans-serif"
           },
-		 {
+          {
             "value": "'adobe caslon pro'",
             "label": "Adobe Caslon Pro",
             "group": "Serif"
@@ -2457,12 +2457,12 @@
         "id": "slide-title-font",
         "label": "Slide Title Font",
         "options": [
-		 {
+          {
             "value": "'futura', Helvetica, Arial, sans-serif",
             "label": "Futura",
             "group": "Sans-serif"
           },
-		 {
+          {
             "value": "'adobe caslon pro'",
             "label": "Adobe Caslon Pro",
             "group": "Serif"
@@ -2733,12 +2733,12 @@
         "id": "caption-font",
         "label": "Caption Font",
         "options": [
-		 {
+          {
             "value": "'futura', Helvetica, Arial, sans-serif",
             "label": "Futura",
             "group": "Sans-serif"
           },
-		 {
+          {
             "value": "'adobe caslon pro'",
             "label": "Adobe Caslon Pro",
             "group": "Serif"
@@ -4086,12 +4086,12 @@
         "id": "promo-font",
         "label": "Promo Text Font",
         "options": [
-		 {
+          {
             "value": "'futura', Helvetica, Arial, sans-serif",
             "label": "Futura",
             "group": "Sans-serif"
           },
-		 {
+          {
             "value": "'adobe caslon pro'",
             "label": "Adobe Caslon Pro",
             "group": "Serif"

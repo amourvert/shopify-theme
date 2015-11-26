@@ -37,7 +37,15 @@
 
   <div class="product-details">  
     <a href="{{ product.url | within: collection }}"> 
-      <h3>{{ product.title }}</h3>      
+      <h3>{{ product.title }} in
+
+{% for option in product.options %}
+  {% if option == 'Color' %}
+    {{ product.variants.first.options[forloop.index0] }}  
+  {% endif %}
+{% endfor %}
+
+      </h3> 
       {% if settings.vendor %}<h4>{{ product.vendor }}</h4>{% endif %}
     </a>  
 

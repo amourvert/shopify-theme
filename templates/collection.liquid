@@ -19,10 +19,38 @@
   <div class="clear"></div>  
 
   <div id="product-loop">
-    {% for product in collection.products %}
-    {% include 'product-listing' %}
-    {% endfor %} 
+
+{% for product in collection.products %}
+    
+    {% include 'product-listing3' %}
+    
+    
+    
+    
+    {% comment %}    
+          {% if product.options.last.size > 1 %}
+          {% assign colorList = ',' %}
+                {% for variant in product.variants %}
+                     {% capture compareColor %},{{variant.options.first}},{% endcapture %}
+                        {% if colorList contains compareColor %}{% else %}
+    
+                          {% include 'product-listing3' with collection.handle %}
+    
+                          {% capture tempList %}{{colorList}}{{variant.options.first}},{% endcapture %}
+                          {% assign colorList = tempList %}
+                    {% endif %}
+                {% endfor %}
+          {% else %}
+              {% include 'product-listing' with collection.handle %}
+          {% endif %}    
+     {% endcomment %}
+    
+    
+    
+{% endfor %}
+
   </div>
+
 </div>
 
 
@@ -32,4 +60,28 @@
 {% include 'pagination' %}
 
 {% endpaginate %}
+
+
+
+<style>
+  .swatch-collect .swatch-element.swatchs.color {
+    float: left;
+    margin-left: 1.04167%;
+    margin-right: 1.04167%;
+    width: 31.25%;
+    margin-bottom: 20px;
+}
+   .swatch-collect p.grid-link__title {
+    margin-top: 15px;
+}
+  .swatch-collect p
+  {
+  text-align:center;
+  }
+  @media screen and (max-width: 740px) {
+      .swatch-collect .swatch-element.swatchs.color {
+    width: 47.9%;
+  }
+  }
+</style>
 
