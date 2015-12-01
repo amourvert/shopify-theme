@@ -12,7 +12,7 @@
         resolution: 'standard_resolution',
         sortBy: 'most-recent',
         links: true,
-        limit: 30,
+        limit: 20,
         mock: false,
       };
       if (typeof params === 'object') {

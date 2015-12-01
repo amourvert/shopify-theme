@@ -29,6 +29,7 @@
 ================================================== -->
 
   {{ 'stylesheet.css' | asset_url | stylesheet_tag }}
+  {{ 'angela.css' | asset_url | stylesheet_tag }}  
   {{ 'custom.css' | asset_url | stylesheet_tag }}
   {{ 'jquery.fs.selecter.css' | asset_url | stylesheet_tag }}
   {{ 'font-awesome.css' | asset_url | stylesheet_tag }}
@@ -60,7 +61,7 @@
   {% endif %}
 
   {{ 'instafeed.js' | asset_url | script_tag }}
-
+  {{ 'angela.js' | asset_url | script_tag }}
 
   <!--[if lt IE 9]>
 <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
