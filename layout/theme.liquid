@@ -61,7 +61,7 @@
   {% endif %}
 
   {{ 'instafeed.js' | asset_url | script_tag }}
-
+  {{ 'angela.js' | asset_url | script_tag }}
 
   <!--[if lt IE 9]>
 <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -95,6 +95,29 @@
 
     });
   </script>  
+
+  <!-- Facebook OG tags
+================================================== -->
+
+{% if template contains 'product' %}
+  <meta property="og:image" content="http:{{ product.featured_image.src | product_img_url: 'grande' }}" />
+  <meta property="og:image:secure_url" content="https:{{ product.featured_image.src | product_img_url: 'grande' }}" />
+{% elsif template contains 'article' %}
+  {% assign img_tag = '<' | append: 'img' %}
+  {% if article.content contains img_tag %}
+    {% assign src = article.content | split: 'src="' %}
+    {% assign src = src[1] | split: '"' | first | remove: 'https:' | remove: 'http:' %}
+    {% if src %}
+      <meta property="og:image" content="http:{{ src }}" />
+      <meta property="og:image:secure_url" content="https:{{ src }}" />
+    {% endif %}
+  {% endif %}
+{% else %}
+  {% if settings.use_logo %}
+    <meta property="og:image" content="http:{{ 'logo.png' | asset_url }}" />
+    <meta property="og:image:secure_url" content="https:{{ 'logo.png' | asset_url }}" />
+  {% endif %}
+{% endif %}
 
 
 </head>
@@ -341,6 +364,28 @@
 {% include 'currencies' %}
   <script type="text/javascript" src="//use.typekit.net/ik/vuTs7TuUWlYUpWA72fgJMzS4NsQvZZ72empU865ZvOJfe7J2fFHN4UJLFRbh52jhWD9uw2ByZAmRZQsKw2j3ZcbDZAj35QqtFyTQiaiaOcBldamkicmkifoRdhXCjAuziW4hZW4XOcFzdPUCdhFydeyzSabCjWjkO1FUiABkZWF3jAF8OcFzdP37OcBhwKoDSWmyScmDSeBRZPoRdhXK2YgkdayTdAIldcNhjPJ4Z1mXiW4yOWgXH6qJ73IbMg6gJMJ7fbKCMsMMeMC6MKG4f5J7IMMjMkMfH6qJtkGbMg6FJMJ7fbKzMsMMeMb6MKG4fOMgIMMj2KMfH6qJnbIbMg6eJMJ7fbK0MsMMegM6MKG4fJCgIMMjgkMfH6qJRMIbMg6sJMJ7fbKTMsMMeM66MKG4fHGgIMMjIKMfH6qJKbIbMg64JMJ7fbKHMsMMegw6MKG4fJZmIMIjMkMfH6qJ6u9bMs6FJMJ7fbKImsMgeMb6MKG4fJmmIMIj2KMfH6qJxubbMs6BJMJ7fbKMmsMgeMv6MKG4fJBmIMIjgkMfH6qJ689bMs6sJMJ7fbKYmsMgeM66MKG4fJymIMIjIKMfqMeXTHp3gb.js"></script>
 <link rel="stylesheet" href="https://use.typekit.net/c/c45028/1w;futura-pt,2,SH7:W:i3,SH9:W:i4,SH4:W:i5,SH6:W:i7,SHD:W:i8,SHB:W:n3,Y5K:W:n4,SH3:W:n5,SH5:W:n7,SHC:W:n8;proxima-nova,2,gbh:W:i1,gbk:W:i3,gbm:W:i4,gbr:W:i6,gbt:W:i7,gbw:W:i8,gby:W:i9,gbg:W:n1,gbj:W:n3,gbl:W:n4,gbq:W:n6,gbs:W:n7,gbv:W:n8,gbx:W:n9/l?3bb2a6e53c9684ffdc9a9bf5195b2a620ddcd3046f58c4dc1101076440738b46c791d2f5f701eed4b7c22acb1d3d74b10e006c8eb67cbd83d2da09bb198d024f992651a3dac201280f4d0327f7493ebe84dce1afa88adf82c66436e9b62e6a0b1ac476fd9d4cd8b3bb50ea292c543d9ba31dfaaa32de5b0d89f6700f84a353ad810b72cd48" media="all">
+
+  <!-- Google remarketing tag
+================================================== -->
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1011098844;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1011098844/?value=0&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+  <!-- Ends Google remarketing tag
+================================================== -->
+
 
 </body>
 </html>

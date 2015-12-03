@@ -1,0 +1,11 @@
+use="dev"
+
+[live]
+api_key="2268b16c79549438758d22199c5051e3"
+password="eb805ab97799ae70434e7844577b3c00"
+store="avtest2015.myshopify.com"
+
+[dev]
+api_key="7115609e81bc7ae8f091db2e0baabdcd"
+password="967b2a9920968d01e917eecedb1bcc50"
+store="amourvert-dev.myshopify.com"
