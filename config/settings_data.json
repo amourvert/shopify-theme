@@ -1740,7 +1740,7 @@
     "products_per_row": "3",
     "details-align": "center",
     "vendor": false,
-    "quickview": true,
+    "quickview": false,
     "show_collection_sidebar": true,
     "smart_collection": true,
     "collection_links_1": true,
