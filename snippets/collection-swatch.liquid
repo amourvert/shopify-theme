@@ -5,6 +5,7 @@
 {% assign file_extension = 'png' %}
 
 {% if collection-swatch == blank %}
+
 <div class="swatch error">
   <p>You must include the snippet collection-swatch.liquid with the name of a product option.</p> 
   <p>Use: <code>{% raw %}{% include 'collection-swatch' with 'name of your product option here' %}{% endraw %}</code></p>
@@ -34,12 +35,8 @@
 {% endfor %}
 
 {% unless found_option %}
-<div class="swatch error">
-  <p>You included the snippet collection-swatch.liquid with the name of a product option — <code>'{{ swatch }}'</code> — that does not belong to your product.</p>
-  <p>Use <code>{% raw %}{% include 'collection-swatch' with 'name of your product option here' %}{% endraw %}</code></p>
-  <p>Example: <code>{% raw %}{% include 'collection-swatch' with 'Color' %}{% endraw %}</code></p>
-  <p><strong>This is case-sensitive!</strong> Do not put in <code>'color'</code> if your product option name is <code>'Color'</code>.</p>
-</div>
+
+
 {% else %}
 <div class="swatch-collect swatch" data-option-index="{{ option_index }} ">
   {% assign values = '' %}
@@ -59,13 +56,17 @@
              <a href="{{ product.url | within: collection }}" class="thumb-{{ product.id }}">
                 <img  src="{{ image.src | img_url: 'large' }}" alt="{{ image.alt | escape }}" >
               </a>
-          <p class="grid-link__title">{{ product.title }} in {{ value | handle }} </p>
+			{% unless product.type == 'Gift Card'%}
+			<p class="grid-link__title">{{ product.title }}  in {{ value | handle }}  </p>
+            {% else %}
+          <p class="grid-link__title">{{ product.title }}</p>
+            {% endunless %}
             <p class="grid-link__meta">
                {% capture price %}{{ product.price | money }}{% endcapture %}
                {% if on_sale %}
                <s class="grid-link__sale_price">{{ product.compare_at_price | money }}</s>
                {% endif %}
-               {% if product.price_varies %}{{ 'products.general.from_html' | t: price: price }}{% else %}{{ price }}{% endif %}
+               {% if product.price_varies %} Starting at {{ price }}{% else %}{{ price }}{% endif %}
             </p>
             {% endif %}    
 
