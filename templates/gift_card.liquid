@@ -14,7 +14,9 @@
 
   {{ 'styles.gift-card.scss.css' | asset_url | stylesheet_tag }}
   {{ 'modernizr.gift-card.js' | asset_url | script_tag }}
-  <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+  <script type="text/javascript" src="//use.typekit.net/ik/vuTs7TuUWlYUpWA72fgJMzS4NsQvZZ72empU865ZvOJfe7J2fFHN4UJLFRbh52jhWD9uw2ByZAmRZQsKw2j3ZcbDZAj35QqtFyTQiaiaOcBldamkicmkifoRdhXCjAuziW4hZW4XOcFzdPUCdhFydeyzSabCjWjkO1FUiABkZWF3jAF8OcFzdP37OcBhwKoDSWmyScmDSeBRZPoRdhXK2YgkdayTdAIldcNhjPJ4Z1mXiW4yOWgXH6qJ73IbMg6gJMJ7fbKCMsMMeMC6MKG4f5J7IMMjMkMfH6qJtkGbMg6FJMJ7fbKzMsMMeMb6MKG4fOMgIMMj2KMfH6qJnbIbMg6eJMJ7fbK0MsMMegM6MKG4fJCgIMMjgkMfH6qJRMIbMg6sJMJ7fbKTMsMMeM66MKG4fHGgIMMjIKMfH6qJKbIbMg64JMJ7fbKHMsMMegw6MKG4fJZmIMIjMkMfH6qJ6u9bMs6FJMJ7fbKImsMgeMb6MKG4fJmmIMIj2KMfH6qJxubbMs6BJMJ7fbKMmsMgeMv6MKG4fJBmIMIjgkMfH6qJ689bMs6sJMJ7fbKYmsMgeM66MKG4fJymIMIjIKMfqMeXTHp3gb.js"></script>
+<link rel="stylesheet" href="https://use.typekit.net/c/c45028/1w;futura-pt,2,SH7:W:i3,SH9:W:i4,SH4:W:i5,SH6:W:i7,SHD:W:i8,SHB:W:n3,Y5K:W:n4,SH3:W:n5,SH5:W:n7,SHC:W:n8;proxima-nova,2,gbh:W:i1,gbk:W:i3,gbm:W:i4,gbr:W:i6,gbt:W:i7,gbw:W:i8,gby:W:i9,gbg:W:n1,gbj:W:n3,gbl:W:n4,gbq:W:n6,gbs:W:n7,gbv:W:n8,gbx:W:n9/l?3bb2a6e53c9684ffdc9a9bf5195b2a620ddcd3046f58c4dc1101076440738b46c791d2f5f701eed4b7c22acb1d3d74b10e006c8eb67cbd83d2da09bb198d024f992651a3dac201280f4d0327f7493ebe84dce1afa88adf82c66436e9b62e6a0b1ac476fd9d4cd8b3bb50ea292c543d9ba31dfaaa32de5b0d89f6700f84a353ad810b72cd48" media="all">
 
   <!--[if lt IE 9]>
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -48,9 +50,9 @@
   <div class="wrap">
 
     <header role="banner" id="header">
-      <a href="{{ shop.url }}" class="logo">{{ shop.name }}</a>
+      <a href="{{ shop.url }}" class="logo"> <img src="{{ 'logo.png' | asset_url }}" alt="Amour Vert"></a>
     </header>
-
+ 
     <main role="main">
 
       <div id="gift-card-outer-container" {% if gift_card.expired or gift_card.enabled != true %}class="disabled"{% endif %}>
@@ -78,7 +80,7 @@
             <div id="gift-card">
               <img src="{{ 'card.gift-card.jpg' | asset_url }}" alt="Gift card illustration">
               {% assign initial_value_size = formatted_initial_value | size %}
-              <div id="gift-card-amount" class="{% if initial_value_size > 6 %}medium{% endif %}">
+              <div id="gift-card-amount">
                 {% if gift_card.balance != gift_card.initial_value %}
                 <span class="tooltip-container"><span class="tooltip-label">{{ gift_card.balance | money }} <small>left</small></span><span class="tooltip-triangle"></span></span>
                 {% endif %}
@@ -115,10 +117,6 @@
         </div>
       </div>
     </main> <!-- / Main -->
-
-    <footer role="contentinfo">
-      <img src="{{ 'icon-bug.gift-card.png' | asset_url }}" class="gift-card-icon">
-    </footer>
 
   </div>
 

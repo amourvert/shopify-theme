@@ -4,10 +4,10 @@
 
 <div class="collect-color" id="prod-{{ product.id }}" data-alpha="{{ product.title }}" data-price="{{ product.price }}">
   <div class="ci">
-    
-      
-  {% if product.available and product.variants.size > 1 and product.type != 'gift-card' %}
-       		{% include 'collection-swatch' with 'Color'%}
+
+
+  {% if product.available and product.variants.size > 1 %}
+       		{% include 'collection-swatch' with 'Color' %}
   {% endif %}
     
    
