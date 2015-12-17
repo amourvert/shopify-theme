@@ -24,10 +24,10 @@ Contents:
 
 //Colors
 
-$accent: #34aadc;
-$darkgrey: #58686f;
+$accent: #fce45e;
+$darkgrey: #000;
 $lightgrey: #bfbfbf;
-$smoke: #fafafa;
+$smoke: #fff;
 
 // Prefixes
 
@@ -137,8 +137,7 @@ $prefix-for-spec: true;
       height:100%;
       -moz-box-shadow:inset 0px 0px 0px $size rgba(0, 0, 0, $opacity);
       -webkit-box-shadow:inset 0px 0px 0px $size rgba(0, 0, 0, $opacity);
-      box-shadow:inset 0px 0px 0px $size rgba(0, 0, 0, $opacity);
-      border-radius: $radius;
+      border-radius: 0;
       z-index: 1;
       pointer-events: none;
       user-select: none;
@@ -165,13 +164,22 @@ $prefix-for-spec: true;
 
 /* - General ----------------------------------------------------------------------------- */
 
+.tk-adobe-caslon-pro{
+	font-family: 'Adobe Caslon Pro', serif;
+}
+
+.tk-futura-pt{
+	font-family: 'Avenir Next', sans-serif;
+	font-weight: 500;
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   -webkit-print-color-adjust: exact;
 }
 
 body {
-  font-family: "Montserrat", sans-serif; color: #333;
+  font-family: "Avenir Next", sans-serif; color: #333;
   background-color: $smoke;
   padding: 0; margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -206,7 +214,7 @@ a {
   padding: 1.5em;
   font-size: .875em;
   line-height: 1;
-  border-radius: 4px;
+  border-radius: 0px;
   @include inline-block;
 
   &:hover {
@@ -318,16 +326,14 @@ main {
 
 #gift-card-outer-container {
   background-color: $accent;
-  border-radius: 4px;
-  box-shadow: 0 0 0 1px rgba(#000, .1) inset;
+  border-radius: 0px;
   padding: 1em;
   @include animation(container-slide .8s ease-in-out);
 }
 
   #gift-card-inner-container {
     background-color: #fff;
-    box-shadow: 0 0 0 1px rgba(#000, .1);
-    border-radius: 2px;
+    border-radius: 0px;
     @include animation(cardslide .8s ease-in-out);
     @include clearfix;
   }
@@ -350,7 +356,7 @@ main {
   .tag {
       background-color: $lightgrey;
       padding: .5em; padding-bottom: .35em;
-      border-radius: 4px;
+      border-radius: 0px;
       font-size: .75em; text-transform: uppercase; letter-spacing: .05em; color: #FFF; line-height: 1;
    }
 
@@ -397,22 +403,15 @@ main {
   position: relative;
 }
 
-  #gift-card-holder .corner {
-    display: block;
-    width: 47px; height: 47px;
-    position: absolute;
-    z-index: 2;
-  }
-
   #gift-card-holder .corner.top-left {
-    background: url(//cdn.shopify.com/s/files/1/0767/5207/t/10/assets/corner-top-left.gift-card.png?16840119658784169123) 0 0 no-repeat;
-    @include supported(svg) { background: url(//cdn.shopify.com/s/files/1/0767/5207/t/10/assets/corner-top-left.gift-card.svg?16840119658784169123) 0 0 no-repeat; }
+    background: url(//cdn.shopify.com/s/files/1/0767/5207/t/10/assets/corner-top-left.gift-card.png?3584728718535084205) 0 0 no-repeat;
+    @include supported(svg) { background: url(//cdn.shopify.com/s/files/1/0767/5207/t/10/assets/corner-top-left.gift-card.svg?3584728718535084205) 0 0 no-repeat; }
     top: -1px; left: -1px;
   }
 
   #gift-card-holder .corner.top-right {
     @include unsupported(borderradius) {
-      background: url(//cdn.shopify.com/s/files/1/0767/5207/t/10/assets/corner-top-right.gift-card.png?16840119658784169123) 0 0 no-repeat;
+      background: url(//cdn.shopify.com/s/files/1/0767/5207/t/10/assets/corner-top-right.gift-card.png?3584728718535084205) 0 0 no-repeat;
       top: 0px; right: 0px;
       width: 7px; height: 7px;
     }
@@ -420,15 +419,15 @@ main {
 
   #gift-card-holder .corner.bottom-left {
     @include unsupported(borderradius) {
-      background: url(//cdn.shopify.com/s/files/1/0767/5207/t/10/assets/corner-bottom-left.gift-card.png?16840119658784169123) 0 0 no-repeat;
+      background: url(//cdn.shopify.com/s/files/1/0767/5207/t/10/assets/corner-bottom-left.gift-card.png?3584728718535084205) 0 0 no-repeat;
       bottom: 0px; left: 0px;
       width: 7px; height: 7px;
     }
   }
 
   #gift-card-holder .corner.bottom-right {
-    background: url(//cdn.shopify.com/s/files/1/0767/5207/t/10/assets/corner-bottom-right.gift-card.png?16840119658784169123) 0 0 no-repeat;
-    @include supported(svg) { background: url(//cdn.shopify.com/s/files/1/0767/5207/t/10/assets/corner-bottom-right.gift-card.svg?16840119658784169123) 0 0 no-repeat; }
+    background: url(//cdn.shopify.com/s/files/1/0767/5207/t/10/assets/corner-bottom-right.gift-card.png?3584728718535084205) 0 0 no-repeat;
+    @include supported(svg) { background: url(//cdn.shopify.com/s/files/1/0767/5207/t/10/assets/corner-bottom-right.gift-card.svg?3584728718535084205) 0 0 no-repeat; }
     bottom: -1px; right: -1px;
   }
 
@@ -436,11 +435,9 @@ main {
 #gift-card {
   position: relative;
   @include box-sizing(border-box);
-  @include innerShadow($radius: 10px);
 }
 
   #gift-card img {
-    border-radius: 10px;
   }
 
   #gift-card-code-outer {
@@ -456,9 +453,9 @@ main {
     #gift-card-code-inner {
       @include inline-block;
       background-color: #fff;
-      padding: .5em;
+      padding: .1em;
       border-radius: 4px;
-      max-width: 450px;
+      max-width: 480px;
       box-shadow: 0 0 0 1px rgba(#000, .1);
 
       .small & { overflow: auto; }
@@ -481,17 +478,17 @@ main {
 
   #gift-card-amount {
     position: absolute; top: 0; right: 0;
-    color: #fff;
+    color: #000;
     font-size: 2.75em;
     padding: .4em .5em;
   }
 
-    #gift-card-amount.medium {
-      font-size: 2.25em;
+    #gift-card-amount {
+      font-size: 2.75em;
     }
 
-    #gift-card-amount strong {
-      text-shadow: 3px 3px 0 rgba(#000, .1);
+    #gift-card-amount {
+	  font-family: "Avenir Next";
       display: block;
     }
 
@@ -603,12 +600,12 @@ main {
 
     .ico-16.print {
       background-image: url('icon-print.gift-card.png');
-      @include supported(svg) { background-image: url(//cdn.shopify.com/s/files/1/0767/5207/t/10/assets/icon-print.gift-card.svg?16840119658784169123); }
+      @include supported(svg) { background-image: url(//cdn.shopify.com/s/files/1/0767/5207/t/10/assets/icon-print.gift-card.svg?3584728718535084205); }
     }
 
     .ico-16.email {
       background-image: url('icon-email.gift-card.png');
-      @include supported(svg) { background-image: url(//cdn.shopify.com/s/files/1/0767/5207/t/10/assets/icon-email.gift-card.svg?16840119658784169123); }
+      @include supported(svg) { background-image: url(//cdn.shopify.com/s/files/1/0767/5207/t/10/assets/icon-email.gift-card.svg?3584728718535084205); }
     }
 
 /* - Footer ---------------------------------------------------------------------------- */
