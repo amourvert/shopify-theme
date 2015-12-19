@@ -63,10 +63,9 @@
             {% endunless %}
             <p class="grid-link__meta">
                {% capture price %}{{ product.price | money }}{% endcapture %}
-               {% if on_sale %}
-               <s class="grid-link__sale_price">{{ product.compare_at_price | money }}</s>
-               {% endif %}
                {% if product.price_varies %} Starting at {{ price }}{% else %}{{ price }}{% endif %}
+               {% if product.compare_at_price > product.price %}
+	           <s class="grid-link__sale_price">{{ product.compare_at_price | money }}</s>{% endif %} 
             </p>
             {% endif %}    
 
